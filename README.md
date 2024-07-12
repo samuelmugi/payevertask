@@ -75,4 +75,6 @@ $ npm run test
 ```
 
 To Access the Rest Endpoints:
-Import the collection 
+Import the collection
+`PAYEVER.postman_collection.json
+`

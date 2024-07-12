@@ -24,6 +24,28 @@
 
 ## Description
 
+## MongoDb & RabbitMq
+The app needs to connect to MongoDB and RabbitMQ.
+Run the following command to start mongodb and rabbitMq.
+Ensure you have docker & docker-compose installed.
+
+```bash
+docker-compose up --build
+```
+credentials for rabbitMq
+
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+
+access the rabbitMQ on
+
+[Rabbit Mq Localhost](http://localhost:15672/)
+
+access the MongoDb connection on
+
+`mongodb://localhost:27017/nest
+`
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation

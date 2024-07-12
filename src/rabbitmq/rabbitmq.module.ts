@@ -1,22 +1,25 @@
-import { Module } from '@nestjs/common';
-import { ClientsModule, Transport } from '@nestjs/microservices';
+import { Module } from "@nestjs/common";
+import { ClientsModule, Transport } from "@nestjs/microservices";
 
 @Module({
   imports: [
     ClientsModule.register([
       {
-        name: 'RABBITMQ_SERVICE',
+        name: "RABBITMQ_SERVICE",
         transport: Transport.RMQ,
         options: {
-          urls: ['amqp://localhost:5672'],
-          queue: 'user_queue',
+          // urls: [process.env.RABBITMQ_URL|| 'amqp://user:password@rabbitmq:5672'],
+          // urls: ["amqp://user:password@rabbitmq:5672"],
+          urls: ['amqp://user:password@localhost:5672'],
+          queue: "user_queue",
           queueOptions: {
-            durable: false,
-          },
-        },
-      },
-    ]),
+            durable: false
+          }
+        }
+      }
+    ])
   ],
-  exports: [ClientsModule],
+  exports: [ClientsModule]
 })
-export class RabbitMQModule {}
+export class RabbitMQModule {
+}
